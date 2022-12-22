@@ -11,9 +11,22 @@ module.exports = {
     'airbnb-typescript/base',
     'eslint-config-prettier',
   ],
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'import'],
   parserOptions: {
     project: './tsconfig.json',
   },
-  rules: {},
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['ts'],
+    },
+    'import/resolver': {
+      typescript: {
+        alywaysTryTypes: true,
+        project: './tsconfig.json',
+      },
+    },
+  },
+  rules: {
+    'import/no-unresolved': 'error',
+  },
 };
