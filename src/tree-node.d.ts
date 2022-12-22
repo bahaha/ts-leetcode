@@ -1,7 +1,7 @@
 interface TreeNode {
   val: number;
-  left: TreeNode | null;
-  right: TreeNode | null;
+  left?: TreeNode;
+  right?: TreeNode;
 }
 
 export default TreeNode;
