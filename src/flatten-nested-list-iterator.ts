@@ -1,4 +1,4 @@
-import NestedInteger from './nested-integer';
+import NestedInteger from './util/nested-integer';
 
 /**
  *  # question:

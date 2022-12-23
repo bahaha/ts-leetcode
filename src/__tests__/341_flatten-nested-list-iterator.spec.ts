@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import NestedIterator from '@/flatten-nested-list-iterator';
-import NestedInteger from '@/nested-integer';
+import NestedInteger from '@/util/nested-integer';
 
 describe('flatten all elements from the nested array', () => {
   it('false on hasNext if empty iterator', () => {
