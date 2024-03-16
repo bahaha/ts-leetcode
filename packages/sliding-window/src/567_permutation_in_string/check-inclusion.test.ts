@@ -4,10 +4,10 @@ import { checkInclusion } from "./check-inclusion";
 //
 
 test("return true if s2 contains permutaiton of s1", () => {
-  // expect(checkInclusion("ab", "eidbaooo")).toBe(true);
+  expect(checkInclusion("ab", "eidbaooo")).toBe(true);
   expect(checkInclusion("adc", "dcda")).toBe(true);
 });
 
 test("return false if s2 not contains permutaiton of s1", () => {
-  // expect(checkInclusion("ab", "eidboaooo")).toBe(false);
+  expect(checkInclusion("ab", "eidboaooo")).toBe(false);
 });
