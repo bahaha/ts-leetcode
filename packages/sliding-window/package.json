@@ -1,0 +1,15 @@
+{
+  "name": "sliding-window",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.5"
+  }
+}
