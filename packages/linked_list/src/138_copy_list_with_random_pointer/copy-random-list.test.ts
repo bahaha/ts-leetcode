@@ -1,0 +1,42 @@
+import { expect, test } from "vitest";
+import { copyRandomList, Node } from "./copy-random-list";
+
+test("deep clone the nodes", () => {
+  const n1 = new Node(7);
+  const n2 = new Node(13);
+  const n3 = new Node(11);
+  const n4 = new Node(10);
+  const n5 = new Node(1);
+  n1.next = n2;
+  n1.random = null;
+  n2.next = n3;
+  n2.random = n1;
+  n3.next = n4;
+  n3.random = n5;
+  n4.next = n5;
+  n4.random = n3;
+  n5.next = null;
+  n5.random = n1;
+
+  const nn1 = copyRandomList(n1);
+  const nn2 = nn1!.next!;
+  const nn3 = nn2!.next!;
+  const nn4 = nn3!.next!;
+  const nn5 = nn4!.next!;
+  expect(nn1).not.toBe(n1);
+  expect(nn1!.val).toBe(n1.val);
+  expect(nn1!.random).toBe(null);
+  expect(nn2).not.toBe(n2);
+  expect(nn2!.val).toBe(n2.val);
+  expect(nn2!.random).toBe(nn1);
+  expect(nn3).not.toBe(n3);
+  expect(nn3!.val).toBe(n3.val);
+  expect(nn3!.random).toBe(nn5);
+  expect(nn4).not.toBe(n4);
+  expect(nn4!.val).toBe(n4.val);
+  expect(nn4!.random).toBe(nn3);
+  expect(nn5).not.toBe(n5);
+  expect(nn5!.val).toBe(n5.val);
+  expect(nn5.next).toBeNull();
+  expect(nn5!.random).toBe(nn1);
+});
